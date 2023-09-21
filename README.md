@@ -29,7 +29,7 @@ Original Extention:
 
 Icons:
 
-- "text-proofing-tools-svgrepo-com" by [SVG Repo](https://www.svgrepo.com/).
+- "tool.svg" by [SVG Repo](https://www.svgrepo.com/).
 
 ## Requirements
 
