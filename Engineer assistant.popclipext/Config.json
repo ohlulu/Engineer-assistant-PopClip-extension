@@ -9,7 +9,7 @@
         "link": "https://openai.com/blog/chatgpt"
     },
     "popclipVersion": 4069,
-    "module": "git-commit-m-correction.js",
+    "module": "engineer-assistant.js",
     "entitlements": ["network"],
     "options": [
         {
