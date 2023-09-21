@@ -2,7 +2,7 @@
     "name": "git commit-m correction",
     "icon": "correction.svg",
     "identifier": "tw.ohlulu.popclip.extension.git-commit-m-correction",
-    "description": "Modify git commit message according to AngularJS Git Commit Message Conventions by ChatGPT.",
+    "description": "Modify git commit message and function naming according to AngularJS Git Commit Message Conventions by ChatGPT.",
     "note": "To use this extension you will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAPI API key</a>",
     "app": {
         "name": "ChatGPT",
