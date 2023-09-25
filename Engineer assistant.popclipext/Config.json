@@ -17,6 +17,13 @@
             "label": "API Key",
             "type": "string",
             "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
+        },
+        {
+            "identifier": "model",
+            "label": "GPT models",
+            "type": "multiple",
+            "values": ["gpt-3.5-turbo", "gpt-4"],
+            "description": "See models: https://platform.openai.com/docs/models"
         }
     ]
 }

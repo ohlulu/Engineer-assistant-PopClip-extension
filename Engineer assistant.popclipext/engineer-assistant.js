@@ -28,7 +28,7 @@ const messageCorrection = async (input, options) => {
     你回: func test_map_throwsErrorOnNon200HTTPResponse
     `;
     const { data } = await openai.post("chat/completions", {
-        model: "gpt-3.5-turbo",
+        model: `${options.model}`,
         messages: [
             { role: "system", content: prompt },
             { role: "user", content: input.text }
