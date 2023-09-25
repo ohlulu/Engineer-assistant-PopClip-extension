@@ -14,8 +14,9 @@ An API key of OpenAI account is required to use this extension. To get an API Ke
 
 1. Sign up for an OpenAI account here: <https://platform.openai.com/>
 2. Generate an API key here: <https://platform.openai.com/account/api-keys>
-3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
-   the extension's settings.
+3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in the extension's settings.
+
+> How can access gpt-4: https://help.openai.com/en/articles/7102672-how-can-i-access-gpt-4
 
 ## Demos
 
