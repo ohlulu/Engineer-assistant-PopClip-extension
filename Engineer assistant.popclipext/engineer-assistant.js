@@ -8,24 +8,11 @@ const messageCorrection = async (input, options) => {
         baseURL: "https://api.openai.com/v1",
         headers: { Authorization: `Bearer ${options.apikey}` },
     });
-    const prompt = `你是一名習慣良好的工程師，負責幫我校正 commit message 或 function 命名中的語法、錯字。
-    我給你兩個範例你參考一下
-    
-    1.
-    我問: Style: remove unused code of ModelMockable
-    你回: Style: remove unused code in ModelMockable
-    
-    2.
-    我問: Feat: remove whitespace and newline
-    你回: Feat: remove whitespace and newline
-
-    3.
-    我問: func test_feed_endpointUrl
-    你回: func test_feed_endpointURL
-
-    4.
-    我問: func test_map_throwsErrorOnNo200HTTPRsponse
-    你回: func test_map_throwsErrorOnNon200HTTPResponse
+    const prompt = `
+    Please revise this git commit message to make its meaning clearer, fix grammar, and correct any typos and as concise as possible.
+    Note that after a colon, it should be lowercase, and don't add a period at the end of sentences. 
+    If you receive this content in Chinese, please first translate it to English, then make the corrections.
+    If there's no problem, no need to modify:\n\n
     `;
     const { data } = await openai.post("chat/completions", {
         model: `${options.model}`,
