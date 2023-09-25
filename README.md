@@ -1,6 +1,10 @@
 # Engineer assistant PopClip extension
 
-Send the selected text to [ChatGPT](https://openai.com/blog/chatgpt) for git commit message correction or function naming correction.
+Engineer Assistant is a convenient PopClip extension to help you work through ChatGPT. [ChatGPT](https://openai.com/blog/chatgpt) 
+
+## Features
+- [x] Correct the grammar and typos in the commit message.
+- [ ] Correct the grammar and typos in the function nameing.
 
 ## Configuration
 
@@ -13,13 +17,10 @@ An API key of OpenAI account is required to use this extension. To get an API Ke
 3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
    the extension's settings.
 
-## About
+## Demos
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
-
-## Author
-
-[OHlulu](https://github.com/ohlulu)
+- Correction git commit message
+![Correction git commit message](/asset/git-message-demo.gif)
 
 ## Acknowledgements
 
@@ -29,7 +30,7 @@ Original Extention:
 
 Icons:
 
-- "tool.svg" by [SVG Repo](https://www.svgrepo.com/).
+- "tool" by [SVG Repo](https://www.svgrepo.com/).
 
 ## Requirements
 
@@ -37,6 +38,11 @@ Requires PopClip 2022.12 and an OpenAI Platform account.
 
 ## Changelog
 
+### 2023-09-25
+
+1. Improve prompt.
+2. Add model config (default is `gpt-3.5-turbo`).
+
 ### 2023-09-22
 
-- Initial release.
+1. Initial release.
