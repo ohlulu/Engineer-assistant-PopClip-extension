@@ -1,34 +1,61 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
+
 const axios = require("axios");
 
 const messageCorrection = async (input, options) => {
-    const openai = axios.default.create({
-        baseURL: "https://api.openai.com/v1",
-        headers: { Authorization: `Bearer ${options.apikey}` },
-    });
-    const prompt = `
-    Please revise this git commit message to make its meaning clearer, fix grammar, and correct any typos and as concise as possible.
-    Note that after a colon, it should be lowercase, and don't add a period at the end of sentences. 
-    If you receive this content in Chinese, please first translate it to English, then make the corrections.
-    If there's no problem, no need to modify:\n\n
-    `;
-    const { data } = await openai.post("chat/completions", {
-        model: `${options.model}`,
-        messages: [
-            { role: "system", content: prompt },
-            { role: "user", content: input.text }
-        ],
-    });
-    const response = data.choices[0].message.content.trim();
+    console.error("options", options);
 
-    popclip.pasteText(response);
+    const claude = axios.default.create({
+        baseURL: "https://api.anthropic.com",
+        headers: {
+            "Content-Type": "application/json",
+            "x-api-key": options.apikey.toString(),
+            "anthropic-version": "2023-06-01",
+        },
+    });
+
+    try {
+        const { data } = await claude.post("/v1/messages", {
+            model: options.model.toString(),
+            max_tokens: 1024,
+            temperature: 0,
+            system: `Revise this git commit message:
+            - Clarify meaning
+            - Fix grammar and typos
+            - Be concise
+            - Use lowercase after colons
+            - Omit final periods
+            - If in Chinese, translate to English first
+            - Return only the revised message
+            - If no issues, leave unchanged`,
+            messages: [
+                {
+                    role: "user",
+                    content: [
+                        {
+                            type: "text",
+                            text: input.text.toString(),
+                        },
+                    ],
+                },
+            ],
+        });
+
+        const response = data.content[0].text.trim();
+        popclip.pasteText(response);
+    } catch (error) {
+        console.error("Error calling Claude API:", error);
+        popclip.showText("Error: " + error.message + "model11" + options.apikey.toString());
+    }
 
     return null;
 };
 
-exports.actions = [{
-    title: "ChatGPT: git commit -m correction",
-    code: messageCorrection,
-}];
+exports.actions = [
+    {
+        title: "Claude: git commit -m correction",
+        code: messageCorrection,
+    },
+];

@@ -2,11 +2,11 @@
     "name": "Engineer assistant",
     "icon": "tool.svg",
     "identifier": "tw.ohlulu.popclip.extension.git-commit-m-correction",
-    "description": "Modify git commit message and function naming according to AngularJS Git Commit Message Conventions by ChatGPT.",
-    "note": "To use this extension you will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAPI API key</a>",
+    "description": "Revise git commit message.",
+    "note": "To use this extension you will need an <a href=\"https://console.anthropic.com/settings/keys\">Anthropic API key</a>",
     "app": {
-        "name": "ChatGPT",
-        "link": "https://openai.com/blog/chatgpt"
+        "name": "Claude",
+        "link": "https://www.anthropic.com/claude"
     },
     "popclipVersion": 4069,
     "module": "engineer-assistant.js",
@@ -16,14 +16,14 @@
             "identifier": "apikey",
             "label": "API Key",
             "type": "string",
-            "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
+            "description": "Obtain an API key from: https://console.anthropic.com/settings/keys"
         },
         {
             "identifier": "model",
-            "label": "GPT models",
+            "label": "Models",
             "type": "multiple",
-            "values": ["gpt-3.5-turbo", "gpt-4"],
-            "description": "See models: https://platform.openai.com/docs/models"
+            "values": ["claude-3-5-sonnet-20240620"],
+            "description": "See models: https://docs.anthropic.com/en/docs/about-claude/models"
         }
     ]
 }

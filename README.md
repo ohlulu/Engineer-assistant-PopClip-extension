@@ -1,6 +1,6 @@
 # Engineer assistant PopClip extension
 
-Engineer Assistant is a convenient PopClip extension to help you work through ChatGPT. [ChatGPT](https://openai.com/blog/chatgpt) 
+Engineer Assistant is a convenient PopClip extension to help you work through [Claude 3.5 Sonnet](https://www.anthropic.com/). 
 
 ## Features
 - [x] Correct the grammar and typos in the commit message.
@@ -10,13 +10,8 @@ Engineer Assistant is a convenient PopClip extension to help you work through Ch
 
 ### API Key
 
-An API key of OpenAI account is required to use this extension. To get an API Key:
-
-1. Sign up for an OpenAI account here: <https://platform.openai.com/>
-2. Generate an API key here: <https://platform.openai.com/account/api-keys>
-3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in the extension's settings.
-
-> How can access gpt-4: https://help.openai.com/en/articles/7102672-how-can-i-access-gpt-4
+Accessing the API
+The API is made available via our web [Console](https://console.anthropic.com/). You can use the [Workbench](https://console.anthropic.com/workbench/3b57d80a-99f2-4760-8316-d3bb14fbfb1e) to try out the API in the browser and then generate API keys in [Account Settings](https://console.anthropic.com/account/keys). Use [workspaces](https://console.anthropic.com/settings/workspaces) to segment your API keys and [control spend](https://docs.anthropic.com/en/api/rate-limits) by use case.
 
 ## Demos
 
@@ -35,9 +30,14 @@ Icons:
 
 ## Requirements
 
-Requires PopClip 2022.12 and an OpenAI Platform account.
+Requires PopClip 2022.12 and an Anthropic account.
 
 ## Changelog
+
+### 2024-10-15
+
+1. Improve prompt by list.
+2. Migration to `claude-3-5-sonnet-20240620`.
 
 ### 2023-09-25
 
