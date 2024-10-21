@@ -28,7 +28,7 @@ const messageCorrection = async (input, options) => {
             - Use lowercase after colons
             - Omit final periods
             - If in Chinese, translate to English first
-            - Return only the revised message
+            - Strictly adhere to: only return the modified message. Any additional content will be considered an error.
             - If no issues, leave unchanged`,
             messages: [
                 {
